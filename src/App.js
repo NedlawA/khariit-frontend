@@ -26,9 +26,9 @@ const App = () => {
       .catch((err) => console.error(err))
     };
 
-  const handleWordSubmit = () => {
+  const handleWordSubmit = (userFormData) => {
       axios
-        .post(`${baseUrl}/words`, {letters: "ب ش ر", engLetters: "b sh r" })
+        .post(`${baseUrl}/words`, {letters: userFormData.letters, engLetters: userFormData.engLetters })
         .then((res) => console.log("success"))
         .catch((err) => console.error(err))
     }

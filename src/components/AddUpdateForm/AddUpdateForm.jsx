@@ -1,20 +1,36 @@
-import './AddUpdateForm.css'
-import {useState} from 'react'
+import "./AddUpdateForm.css";
+import { useState } from "react";
 
-const AddUpdateForm = props => {
-    const [formData, setFormData] = useState({
-        letters: "",
-        engLetters: ""
-    });
+const initialFormData = {
+    letters: '',
+    engLetters: '',
+  };
 
+const AddUpdateForm = (props) => {
+  const [formData, setFormData] = useState(initialFormData);
 
-    return (
-        <div>
-            <form onSubmit={props.handleWordSubmit}>
-        <input type="text" placeholder="arabic root"/>
-        <input type="text" placeholder="eng letters"/>
-    <input type="submit" value="Submit new root"/></form></div>
-    )
-}
+  const handleChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-export default AddUpdateForm
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    props.handleWordSubmit(formData);
+    setFormData(initialFormData);
+  };
+
+  return (
+    <div>
+        <h2>Missing a root?</h2>
+      <form onSubmit={handleFormSubmit}>
+        <input id="letters" name="letters" onChange={handleChange}  value={formData.letters} type="text" placeholder="arabic root" />
+        <input id="engLetters" name="engLetters" onChange={handleChange} value={formData.engLetters} type="text" placeholder="eng letters" />
+        <input type="submit" value="Submit new root" />
+      </form>
+    </div>
+  );
+};
+
+export default AddUpdateForm;
