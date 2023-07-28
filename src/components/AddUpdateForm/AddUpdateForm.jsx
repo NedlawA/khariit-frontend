@@ -5,6 +5,7 @@ import { useState } from "react";
 const initialFormData = {
     letters: '',
     engLetters: '',
+    wordId: ''
   };
 
 const AddUpdateForm = (props) => {
@@ -26,9 +27,11 @@ const AddUpdateForm = (props) => {
     <div>
         <h2>Missing a root?</h2>
       <form onSubmit={handleFormSubmit}>
+        {/* <input type="text" name="wordId" onChange={handleChange} value={formData.wordId}/> */}
         <input id="letters" name="letters" onChange={handleChange}  value={formData.letters} type="text" placeholder="arabic root" />
         <input id="engLetters" name="engLetters" onChange={handleChange} value={formData.engLetters} type="text" placeholder="eng letters" />
         <input disabled={formData.letters.length === 0 || formData.engLetters.length === 0}type="submit" value="Submit new root" />
+        <input disabled={formData.letters.length === 0 || formData.engLetters.length === 0}type="submit" value="Update root" />
       </form>
       <VKeyboard />
     </div>
