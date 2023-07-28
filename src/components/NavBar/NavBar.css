@@ -1,10 +1,23 @@
-.icon-tabler-sun-moon{
-    position:absolute;
-    top:0;
-    right:0;
-    width: 10%;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#theme-button {
+    font-size: larger;
+    background: none;
+    border: none;
+    margin: .5rem;
   }
   
-  #theme-button{
-    border: none;
+  ul {
+    color: green;
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    display: flex;
+    margin: .5rem;
   }
