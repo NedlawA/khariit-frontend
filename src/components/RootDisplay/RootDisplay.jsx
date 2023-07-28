@@ -2,7 +2,10 @@ import "./RootDisplay.css"
 
 const RootDisplay = props => {
   return (
-    <div>RootDisplay</div>
+    <div>
+        {props.rootDisplay.letters}
+        {props.rootDisplay.engLetters}
+    </div>
   )
 }
 

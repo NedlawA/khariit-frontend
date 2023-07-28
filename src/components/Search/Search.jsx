@@ -11,9 +11,10 @@ const Search = props => {
            <button type="submit" className="searchButton" aria-label="search">
             <i><TbSearch/></i>
           </button>
-          <button onClick={() =>props.onGetAll()} className="getAll">See all roots</button>
+          <button onClick={() => props.onGetAll()} className="getAll">See all roots</button>
           <section className="display">
             <RootDisplay 
+            rootDisplay={props.rootDisplay}
           arabicRoot={props.letters}
           engLetters={props.engLetters}
           />
