@@ -3,6 +3,9 @@ import "./RootDisplay.css"
 const RootDisplay = props => {
   return (
     <div className="table">
+        <section>
+          {props.wordId}
+        </section>
         <section className="column arRoot">
             {props.arabicRoot}
         </section>
