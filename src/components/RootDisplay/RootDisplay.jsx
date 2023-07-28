@@ -15,7 +15,6 @@ const RootDisplay = props => {
         <section>
             <button onClick={() => props.onDelete(props.wordId)}>Delete</button>
         </section>
-        
     </div>
   )
 }
