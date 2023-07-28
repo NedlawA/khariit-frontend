@@ -1,0 +1,7 @@
+.table {
+    display: flex;
+}
+.column {
+    display: flex;
+    margin: 5px;
+}

@@ -13,11 +13,14 @@ const Search = props => {
           </button>
           <button onClick={() => props.onGetAll()} className="getAll">See all roots</button>
           <section className="display">
+            {props.rootDisplay.map((word) => (
             <RootDisplay 
-            rootDisplay={props.rootDisplay}
-          arabicRoot={props.letters}
-          engLetters={props.engLetters}
-          />
+          arabicRoot={word.letters}
+          engLetters={word.engLetters}
+          onDelete={props.onDelete}
+          wordId={word.id}
+          />))
+            }
           </section>
         </div>
   )
