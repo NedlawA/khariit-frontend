@@ -20,7 +20,7 @@
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
-    grid-area: 3 / 1 / span 1 / span 4;
+    grid-area: 2 / 1 / span 1 / span 4;
   }
   
   .searchTerm:focus{
@@ -37,7 +37,7 @@
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
-    grid-area: 3 / 5 / span 1 / span 1;
+    grid-area: 2 / 5 / span 1 / span 1;
   }
   
   /*Resize the wrap to see the search bar change!*/
@@ -49,6 +49,19 @@
     transform: translate(-50%, -50%);
     display: grid;
     grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
   
+  .getAll {
+    grid-area: 3 / 3 / span 1 / span 1;
+    justify-self: center;
+    background: none;
+    border: 2px solid green;
+    height: 1.5rem;
+    width: 6rem;
+  }
+
+  .display {
+    grid-area: 4 / 3 ;
+    justify-self: center;
+  }
