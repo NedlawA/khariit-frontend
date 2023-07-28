@@ -1,6 +1,6 @@
 body{
   background: var(--bg);
-  transition: background 500ms ease-in-out;
+  transition: background 600ms ease-in-out;
 }
 .light{
     --bg: rgb(245, 241, 241);

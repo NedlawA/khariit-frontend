@@ -4,6 +4,7 @@ import {TbSearch} from "react-icons/tb"
 
 const Search = props => {
   return (
+    <div>
     <div className="wrap">
         <h1>KHARIIT</h1>
         <div className="search" />
@@ -12,17 +13,20 @@ const Search = props => {
             <i><TbSearch/></i>
           </button>
           <button onClick={() => props.onGetAll()} className="getAll">See all roots</button>
-          <section className="display">
+          
+          </div>
+        <section className="display">
             {props.rootDisplay.map((word) => (
             <RootDisplay 
           arabicRoot={word.letters}
           engLetters={word.engLetters}
           onDelete={props.onDelete}
           wordId={word.id}
+          key={word.id}
           />))
             }
           </section>
-        </div>
+          </div>
   )
 }
 

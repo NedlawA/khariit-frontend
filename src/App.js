@@ -1,6 +1,7 @@
 import "./App.css"
 import Search from "./components/Search/Search"
 import NavBar from "./components/NavBar/NavBar"
+import AddUpdateForm from "./components/AddUpdateForm/AddUpdateForm";
 import React, { useState } from "react";
 import axios from 'axios'
 
@@ -8,8 +9,6 @@ const baseUrl = process.env.REACT_APP_BACKEND
 
 const App = () => {
   const [rootDisplay, setRootDisplay] = useState([]);
-  
-
   
   const onGetAll = () => {
     axios
@@ -26,12 +25,20 @@ const App = () => {
       })
       .catch((err) => console.error(err))
     };
-  
-  
+
+  const handleWordSubmit = () => {
+      axios
+        .post(`${baseUrl}/words`, {letters: "ب ش ر", engLetters: "b sh r" })
+        .then((res) => console.log("success"))
+        .catch((err) => console.error(err))
+    }
+
+
   return (
     <div>
     <NavBar />
     <Search rootDisplay={rootDisplay} onGetAll={onGetAll} onDelete={onDelete} />
+    <AddUpdateForm handleWordSubmit={handleWordSubmit}/>
     </div>
   )
 }
