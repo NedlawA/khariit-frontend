@@ -33,11 +33,22 @@ const App = () => {
         .catch((err) => console.error(err))
     }
 
+  const handleSearch = userSearchData => {
+    let param = '';
+    const english = /^[A-Za-z0-9]*$/;
+    if (english.test(userSearchData.data[0])) {
+      param = 'en_letters?engLetters=';}
+    else {param = 'ar_letters?letters='}
+    axios
+      .get(`${baseUrl}/words/${param}${userSearchData.data}`)
+      .then((res) => console.log(res.data))
+      .catch((err)=>console.error(err))
+  }
 
   return (
     <div>
     <NavBar />
-    <Search rootDisplay={rootDisplay} onGetAll={onGetAll} onDelete={onDelete} />
+    <Search rootDisplay={rootDisplay} onGetAll={onGetAll} onDelete={onDelete} handleSearch={handleSearch} />
     <AddUpdateForm handleWordSubmit={handleWordSubmit}/>
     </div>
   )
