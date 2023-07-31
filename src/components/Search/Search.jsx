@@ -6,6 +6,7 @@ import { useState } from "react";
 const initialSearchData = {data: ''}
 
 const Search = props => {
+
   const [searchData, setSearchData] = useState(initialSearchData)
 
   const handleChange = (event) => {
@@ -14,24 +15,23 @@ const Search = props => {
     setSearchData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSearchSubmit = event => {
-    event.preventDefault();
+  const handleSearchSubmit = e => {
+    e.preventDefault();
     props.handleSearch(searchData);
     setSearchData(initialSearchData);
   };
+
+  
   
   return (
-    <div>
     <div className="wrap">
         <h1>KHARIIT</h1>
-        <form className="search" onSubmit={handleSearchSubmit} >
-            <input value={searchData.data}onChange={handleChange} type="text" id="data" name="data" className="searchBar" placeholder="Enter the root letters in English or Arabic" />
-           <button type="submit" className="searchButton" aria-label="search">
+        <div className="search" />
+        <input value={searchData.data} onChange={handleChange} type="text" id="data" name="data" className="searchBar" placeholder="Enter the root letters in English or Arabic" />
+           <button onClick={handleSearchSubmit} type="submit" className="searchButton" aria-label="search">
             <i><TbSearch/></i>
           </button>
           <button onClick={() => props.onGetAll()} className="getAll">See all roots</button>
-          </form>
-          </div>
         <section className="display">
             {props.rootDisplay.map((word) => (
             <RootDisplay 

@@ -13,6 +13,8 @@
     margin-right: 8px;
 }
 .arRoot {
-    border-left: 1px solid black;
-    padding: 0 8px;
+    border-right: 1px solid black;
+    padding-right: 13px;
+    margin-right: 16px;
+
 }

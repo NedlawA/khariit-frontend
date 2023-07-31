@@ -6,11 +6,11 @@ const RootDisplay = props => {
         <section>
           {props.wordId}
         </section>
-        <section className="column arRoot">
-            {props.arabicRoot}
-        </section>
         <section className="column engLetters">
             {props.engLetters}
+        </section>
+        <section className="column arRoot">
+            {props.arabicRoot}
         </section>
         <section>
             <button onClick={() => props.onDelete(props.wordId)}>Delete</button>
