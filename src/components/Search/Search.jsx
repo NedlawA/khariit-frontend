@@ -1,4 +1,4 @@
-import "./Search.css"
+// import "./Search.css"
 import RootDisplay from "../RootDisplay/RootDisplay"
 import {TbSearch} from "react-icons/tb"
 import { useState } from "react";

@@ -41,13 +41,13 @@ const App = () => {
     else {param = 'ar_letters?letters='}
     axios
       .get(`${baseUrl}/words/${param}${userSearchData.data}`)
-      .then((res) => console.log(res.data))
+      .then((res) => setRootDisplay(res.data))
       .catch((err)=>console.error(err))
   }
 
   return (
     <div>
-    <NavBar />
+    {/* <NavBar /> */}
     <Search rootDisplay={rootDisplay} onGetAll={onGetAll} onDelete={onDelete} handleSearch={handleSearch} />
     <AddUpdateForm handleWordSubmit={handleWordSubmit}/>
     </div>
