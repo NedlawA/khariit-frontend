@@ -1,11 +1,10 @@
 import "./RootDisplay.css"
 
+
 const RootDisplay = props => {
   return (
     <div className="table">
-        <section>
-          {props.wordId}
-        </section>
+        
         <section className="column engLetters">
             {props.engLetters}
         </section>
